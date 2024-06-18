@@ -10,7 +10,7 @@ class Profile(models.Model):
     email = models.EmailField(max_length=50, blank=True)
     content = models.TextField(blank=True)
     image = models.ImageField(
-        upload_to='images/', default='../default_profile_1_aowesy'
+        upload_to='images/', default='../default_profile_mbby6k'
     )
     facebook_link = models.URLField(blank=True)
     x_link = models.URLField(blank=True)
