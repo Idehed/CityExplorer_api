@@ -34,8 +34,10 @@ DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['8000-idehed-cityexplorerapi-wu74dqll7t6.ws-eu114.gitpod.io']
+ALLOWED_HOSTS = ['8000-idehed-cityexplorerapi-nx93wqj5n4w.ws.codeinstitute-ide.net']
 
+
+CSRF_TRUSTED_ORIGINS = ['https://8000-idehed-cityexplorerapi-nx93wqj5n4w.ws.codeinstitute-ide.net']
 
 # Application definition
 
