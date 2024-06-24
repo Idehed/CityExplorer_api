@@ -60,7 +60,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEV' in os.environ
 
-ALLOWED_HOSTS = ['8000-idehed-cityexplorerapi-nx93wqj5n4w.ws.codeinstitute-ide.net', 'cityexplorer-api-1e4f09c72732.herokuapp.com/']
+ALLOWED_HOSTS = ['8000-idehed-cityexplorerapi-nx93wqj5n4w.ws.codeinstitute-ide.net', 'cityexplorer-api-1e4f09c72732.herokuapp.com']
 
 
 CSRF_TRUSTED_ORIGINS = ['https://8000-idehed-cityexplorerapi-nx93wqj5n4w.ws.codeinstitute-ide.net']
