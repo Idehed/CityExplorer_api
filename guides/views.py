@@ -21,3 +21,10 @@ class GuideList(generics.ListCreateAPIView):
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
+
+class GuideDetail(generics.RetrieveUpdateDestroyAPIView):
+    """
+    """
+    permission_classes = [IsOwnerOrReadOnly]
+    serializer_class = GuideSerializer
+    queryset = Guide.objects.all().order_by('-created_at')
