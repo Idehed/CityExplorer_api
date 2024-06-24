@@ -1,3 +1,4 @@
+from django.db.models import Count, Av
 from rest_framework import generics, permissions, filters
 from drf_api.permissions import IsOwnerOrReadOnly
 from .models import Guide
@@ -8,7 +9,10 @@ class GuideList(generics.ListCreateAPIView):
     """
     serializer_class = GuideSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
-    queryset = Guide.objects.all()
+    queryset = Guide.objects.annotate(
+        reviews_count=Count('reviews', distinct=True),
+        average_rating=Avg('reviews__rating')
+    )
 
     filter_backends = [
         filters.SearchFilter
@@ -27,4 +31,7 @@ class GuideDetail(generics.RetrieveUpdateDestroyAPIView):
     """
     permission_classes = [IsOwnerOrReadOnly]
     serializer_class = GuideSerializer
-    queryset = Guide.objects.all().order_by('-created_at')
+    queryset = Guide.objects.annotate(
+        reviews_count=Count('reviews', distinct=True),
+        average_rating=Avg('reviews__rating')
+    ).order_by('-created_at')
