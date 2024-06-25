@@ -94,6 +94,7 @@ INSTALLED_APPS = [
     'followers',
     'guides',
     'reviews',
+    'contacts',
 ]
 
 SITE_ID = 1
