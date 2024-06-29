@@ -63,7 +63,8 @@ DEBUG = 'DEV' in os.environ
 ALLOWED_HOSTS = ['8000-idehed-cityexplorerapi-nx93wqj5n4w.ws.codeinstitute-ide.net', os.environ.get('ALLOWED_HOST')]
 
 
-CSRF_TRUSTED_ORIGINS = ['https://8000-idehed-cityexplorerapi-nx93wqj5n4w.ws.codeinstitute-ide.net']
+CSRF_TRUSTED_ORIGINS = ['https://8000-idehed-cityexplorerapi-nx93wqj5n4w.ws.codeinstitute-ide.net',
+'https://cityexplorer-frontend-82d55bcd49a8.herokuapp.com']
 
 # Application definition
 
