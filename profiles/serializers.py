@@ -29,7 +29,7 @@ class ProfileSerializer(serializers.ModelSerializer):
         model = Profile
         fields = [
             'id', 'owner', 'created_at', 'updated_at', 'name',
-            'email', 'content', 'image', 'facebook_link', 'x_link', 
+            'email', 'content', 'image', 'guideId', 'facebook_link', 'x_link', 
             'instagram_link', 'youtube_link', 'is_owner', 'following_id',
             'posts_count', 'followers_count', 'following_count',
         ]

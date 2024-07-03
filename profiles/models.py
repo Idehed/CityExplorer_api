@@ -16,6 +16,7 @@ class Profile(models.Model):
     x_link = models.URLField(blank=True)
     instagram_link = models.URLField(blank=True)
     youtube_link = models.URLField(blank=True)
+    guideId = models.IntegerField(null=True)
 
     class Meta:
         ordering = ['-created_at']
