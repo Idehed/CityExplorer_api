@@ -1,116 +1,356 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# CityXP API
 
-Welcome Idehed anton,
+![CityXP]()<br>
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
 
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **June 14, 2024**
+## Table of Contents
+* [CityXP API](#CityXP-api)
+  * [Objective](#Objective)
+    * [React Frontend](#React-Frontend)
+  * [Live page](#Live-Page)
+* [Planning & Agile](#Planning-and-Agile)
+  * [Design](#Design)
+  * [Wireframes](#Wireframes)
+  * [Agile](#Agile)
+  * [Labels used](#Labels-used)
+  * [User stories](#User-stories)
+  * [Relationship Diagram](#Relationship-Diagram)
+  * [Methodology CRUD](#Methodology-CRUD)
+  * [Features and Functionality for Superusers](#Features-and-Functionality-for-Superusers)
+* [Manual Testing](#Manual-testing)
+  * [Deployed Admin Screens](#deployed-admin-screens)
+  * [Validation](#validation)
+  * [Future Improvements](#Future-Improvements)
+  * [Installed Python Packages](#Installed-Python-Packages)
+  * [Package Dependencies](#Package-Dependencies)
+* [Development and Deployment](#Development-and-Deployment)
+  * [Heroku](#Heroku)
+  * [Forking](#Forking)
+  * [Languages and Technologies](#Languages-and-Technologies)
+  * [Other forms of development](#Other-forms-of-development)
+* [Credits](#Credits)
+  * [Media](#Media)
+* [Acknowledgements](#Acknowledgements)
 
-## Gitpod Reminders
+## Objective
+This is the API for the SourdoughCircle FrontEnd application.
+Here the backend information such as users, profiles, posts, comments, likes, categories etc are stored.
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+### React Frontend
+The repository for the frontend of the application can be found here:<br>[CityXP FrontEnd]()
 
-`python3 -m http.server`
+## Live Page
+[CityXP API]()
 
-A blue button should appear to click: _Make Public_,
+In development:
+![API Preview]()
+Deployed version:
+![API Preview]()
 
-Another blue button should appear to click: _Open Browser_.
+# Planning and Agile
 
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
+## Design:
 
-A blue button should appear to click: _Make Public_,
+## Wireframes:
+### Homescreen/Feed
+![Home]()
+### Liked posts page
+![Liked]()
+### Login page
+![Login]()
+### Profile page
+![Profile]()
+### Saved posts page (was later removed during planning)
+![Saved]()
+### Signup page
+![Sign up]()
 
-Another blue button should appear to click: _Open Browser_.
+## Agile:
+The API and Frontend of this project was planned using Agile methodology and MoSCoW prioritization on github projects.<br>
 
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+The user stories project can be found [here]() 
 
-To log into the Heroku toolbelt CLI:
+## Labels used:
+`must have`
+`should have`
+`could have`
+`wont have`
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
+![Project planning]()
 
-------
+## User Stories
+### `Must-Have`:<br>
 
-## Release History
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+### `Should-Have`:<br>
 
-**June 14, 2024,** Temporarily remove Mongo until key issue is resolved
 
-**May 28 2024:** Fix Mongo and Links installs
+### `Could-Have`:<br>
 
-**April 26 2024:** Update node version to 16
 
-**September 20 2023:** Update Python version to 3.9.17.
+### `Wont-Have` & `Future implementation`:<br>
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+<b>The issues were closed and the milestones subsequently too.</b>
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+## Relationship Diagram
+The relationship diagram between models from an individual perspective can be best defined as follows:
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+- The [Profile]() flaunts the owner(OneToOne),<br>
+ created_at(DateTimeField),<br>
+ updated_at(DateTimeField),<br>
+ name(CharField),<br>
+ email(EmailField),<br>
+ content(TextField),<br>
+ image(ImageField),<br>
+ facebook_link(URLField),<br>
+ twitter_link(URLField) and<br>
+ instagram_field(URLField)<br>
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+***
+<br>
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+<img src="" alt="Models Diagram">
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+## Methodology CRUD
+When performing CRUD (Create, Retrieve, Update, Delete) function based views, the following methods were used to manipulate the table in the database.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+For such, to the subsequent endpoints:
+/profiles/, /posts/, /comments/, /likes/, /followers/, /contact/, /category/
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+- POST - Used to create an object to a list of (endpoint)
+- GET - Used to retrieve series of objects from a list of (endpoint)
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+Singularly, for the same endpoints past the primary keys:
+/profiles/int:pk/, /posts/int:pk/int:pk/, /comments/int:pk/, /likes/int:pk/, /followers/int:pk/, /contact/int:pk/, category/
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+- GET - Used to view a single object in a list or (endpoint)
+- PUT - Used to update a single object in a list of (endpoint)
+- DELETE - Used to delete an existant single object from a list of (endpoint)
 
-------
+Users can then:
+- CRUD Profiles
+- CRUD Posts
+- CRUD Comments
+- CRUD Likes
+- CRUD Followers
+- CR Contacts
 
-## FAQ about the uptime script
 
-**Why have you added this script?**
+## Features and Functionality for Superusers
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+As a Superuser one has the ability to perform the following via the admin panel:
+- CRUD Posts
+- CRUD Comments
+- CRUD Profiles
+- CRUD Contacts
+- Change Passwords
+- Change emails
+- Promote users to Superuser
 
-**How will this affect me?**
+<img src="" alt="Admin Panel (local)"><br>
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+# Manual Testing
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
+Manual Testing for the overall functionality of the API was performed by entering dummy data in the backend both via Backend-and Front-end.
+All data is CRUDed accordingly.<br>
+<b>[Detailed manual testing is located here](/Testing.md)</b>
 
-**So….?**
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
 
-**Can I opt out?**
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+## Deployed admin Screens
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
+<details>
+<summary><b>Django admin panel</b></summary>
+<summary>
+<br>
 
-**Anything more?**
+  An overview of the django admin panel to display the different pathways and to inform what the admin can do.
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+  - <b>Profiles</b><br>
+    The admin overview of all the profiles where admin can pick a profile and delete it (GET, POST and DELETE)
+  ![Profiles]()
+  - <b>Profiles details</b><br>
+    Profile details, here the admin can change all the details in the profile as displayed in the image. The admin can also delete users. (GET, PUT, PATCH, DELETE)
+  ![Profiles details]()
+  - <b>Posts</b><br>
+    Postlist for admin to view and handle all the posts on the website (GET, POST and DELETE)
+  ![Posts]()
+  - <b>Posts details</b><br>
+    Post details admin view to make it easy for admin to handle the posts details. The admin can change all the details of the post and delete it if needed. (GET, PUT, PATCH and DELETE)
+  ![Posts details]()
+  - <b>Likes</b><br>
+    Likes view that displays a list of the likes and what post that is liked (GET, POST, DELETE)
+  ![Likes]()
+  - <b>Likes details</b><br>
+    Details view for likes where admin can edit what posts the like should be connected to, the admin can also change user that liked and delete likes. (GET, PUT, PATCH and DELETE)
+  ![Likes details]()
+  - <b>Contact</b><br>
+    Contact list view of all the incoming messages from the contact form on the website. Admin can create new contact and delete existing ones. (GET, POST, DELETE)
+  ![Contact]()
+  - <b>Contact details</b><br>
+    Admin contact details where admin can read the message and it's details, edit, add new information, and delete. An admin response field is also implemented but non working at the moment, this will be a [future improvement](#future-improvements) where admin is supposed to be able to respond directly on the admin panel and the email will be sent to the email the user added to the form. (GET, PUT, PATCH and DELETE)
+  ![Contact details]()
+  - <b>Comments</b><br>
+    Comments list admin overview for the admin to see all the comments, add new ones and delete existing ones. (GET, POST and DELETE)
+  ![Comments]()
+  - <b>Comments details</b><br>
+    Details view for comments where admin can update all the fields needed for the comment, the admin can also delete the comment. (GET, PUT, PATCH and DELETE)
+  ![Comments details]()
+  - <b>Category</b><br>
+    Category list view for admin to display all existing categories with id number and name. Admin can add new categories or delete existing ones. (GET, POST and DELETE)
+  ![Category]()
+  - <b>Category details</b><br>
+    Details view for categories. The admin can update existing fields and delete if needed. (GET, PUT, PATCH and DELETE)
+  ![Category details]()
 
----
 
-Happy coding!
+</summary>
+</details>
+<details>
+<summary><b>Deployed API overview</b></summary>
+<summary>
+<br>
+
+  Below are screenshots of the deployed API that displays the main overview and that the paths are working correctly and not displaying any sensitive information, the main testing was done in the local API to get more details and information when testing and can be found [here](#manual-testing) and the live API can be found [here]()
+
+  - [Start]()<br>
+    The main page of the deployed API
+  ![Start]()
+  - [/profiles]()<br>
+    The profile list on the deployed API
+  ![Profiles]()
+  - [/profiles/id]()<br>
+    The profile id view on the deployed API
+  ![Profiles id]()
+  - [/posts]()<br>
+    The posts list on the deployed API
+  ![Posts]()
+  - [/posts/id]()<br>
+    The posts id view on the deployed API
+  ![Posts id]()
+  - [/likes]()<br>
+    The likes list on the deployed API
+  ![Likes]()
+  - [/likes/id]()<br>
+    The likes id view on the deployed API
+  ![Likes id]()
+  - [/contact (authentication required to display)]()<br>
+    The contact list on the deployed API. This page should respond with non authenticated information to not give everyone access to users information and messages sent through with the contact form.
+  ![Contact]()
+  - [/contact/id (authentication required to display)]()<br>
+    The contact id view on the deployed API. This page should respond with non authenticated information to not give everyone access to users information and messages sent through with the contact form.
+  ![Contact id]()
+  - [/comments]()<br>
+    The comments list on the deployed API.
+  ![Comments]()
+  - [/comments/id]()<br>
+    The comments id view on the deployed API.
+  ![Comments id]()
+
+</summary>
+</details>
+
+## Validation
+CI Python Linter was also used in parallel with the development of the API, to keep the code free of errors.
+
+The Code has not exhibited apparent errors after consecutive tests and corrections throughout the development.
+Minor errors was appearing in the validation but was simple to resolve:
+
+
+ ![Python validation]()
+
+## Future Improvements
+
+
+
+## Installed Python Packages
+The following packages were installed when developing this project:
+To install, the following command ran: ```pip install``` ...
+
+
+## Package Dependencies
+-
+
+# Development and Deployment
+The project was developed using GitHub and GitPod platforms...
+- Navigate to: "Repositories" and create "New".
+- Mark the following field: ✓ Public
+- Select template: "Code-Institute-Org/react-ci-template".
+- Add a Repository name: "cityexplorer-api".
+- ...and create Repository.
+
+
+For Commits on this project, the following commands ran:
+- ```git add .``` <- Stages before commiting.
+- ```git commit -m "written imperative declaration"``` <- Declares changes and updates.
+- ```git push``` <- Push all updates to the GitHub Repository.
+
+To run the server locally (Debug = True), the following command ran:
+- ```python manage.py runserver``` <- Loads the website on the in-built Terminal.
+
+During development migrations to the database were made.
+To make migrations the following commands ran:
+- ```python manage.py makemigrations``` <- Creates a new database migration
+- ```python manage.py migrate``` <- Applies pending migrations
+
+To create or update Requirements.txt file the following commands ran:
+- ```pip3 freeze --local > requirements.txt```  <-Runs the req.
+- ```pip install -r requirements.txt``` <- Install req.
+
+To create a Superuser the following command ran (from Heroku terminal): 
+- ```python manage.py createsuperuser``` (username->email->password1->password2) <- Creates a Superuser
+
+To create a new Django project, in the currenct directory, the followig command ran:
+- ```django-admin startproject NAMEOFTHEPROJECT .``` <- Starts the project
+
+To create the app the following command ran:
+- ```python3 manage.py startapp NAMOFTHEAPP``` <- Creates a folder for the app withing the project
+- 
+
+## Heroku
+The website is being hosted and deployed on Heroku:
+- Navigate to: "Create new app" add a unique name "djangorestframework-api" and select your region. Click "Create App"
+- Head over to "Settings" tab and apply the respective config VARs
+- Move to "Deploy" section and select "Github" method"
+- From here search for the repository name "connect", from the GitHub account.
+- Hit "Connect" and "Enable Automatic Deploys" to keep the the repository in parallel to Heroku.
+- Manually "Deploy Main Branch".
+- Upon successful deployment, retrieve the link for the mock terminal.
+- The live app can be found [here]().
+
+## Forking
+Most commonly, forks are used to either propose changes to someone else's project or to use someone else's project as a starting point for your own idea.
+
+- Navigate to the GitHub Repository you want to 
+  fork.
+
+- On the top right of the page under the header, 
+  click the fork button.
+
+- This will create a duplicate of the full 
+  project in your GitHub Repository.
+
+## Languages and Technologies
+- Django REST Framework (Python Framework - API)
+
+## Other forms of development
+- [Diagrams](https://app.diagrams.net/) - Diagram set up
+- [Github](https://github.com/) - Host for the repository
+- [Gitpod](https://gitpod.io/) - Code editor
+- [ElephantSQL](https://www.elephantsql.com/) - Database
+- [Cloudinary](https://cloudinary.com/) - Static & Media host
+- [Heroku](https://id.heroku.com/) - Cloud platform/Host the live project
+
+# Credits
+
+## Media:
+
+
+# Acknowledgements
