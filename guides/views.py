@@ -12,7 +12,7 @@ class GuideList(generics.ListCreateAPIView):
     queryset = Guide.objects.annotate(
         reviews_count=Count('reviews', distinct=True),
         average_rating=Avg('reviews__rating')
-    )
+    ).order_by('-created_at')
 
     filter_backends = [
         filters.SearchFilter
