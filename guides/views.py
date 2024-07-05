@@ -4,9 +4,10 @@ from drf_api.permissions import IsOwnerOrReadOnly
 from .models import Guide
 from .serializers import GuideSerializer
 
+
 class GuideList(generics.ListCreateAPIView):
     """
-    List all the comments or create one if you are logged in 
+    List all the comments or create one if you are logged in
     calculate the number of reviews and an average rating number
     """
     serializer_class = GuideSerializer
@@ -27,6 +28,7 @@ class GuideList(generics.ListCreateAPIView):
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
+
 
 class GuideDetail(generics.RetrieveUpdateDestroyAPIView):
     """

@@ -4,6 +4,7 @@ from drf_api.permissions import IsOwnerOrReadOnly
 from .models import Review
 from .serializers import ReviewDetailSerializer, ReviewSerializer
 
+
 class ReviewList(generics.ListCreateAPIView):
     """
     List all the reviews and create a review if you are logged in
@@ -16,6 +17,7 @@ class ReviewList(generics.ListCreateAPIView):
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
+
 
 class ReviewDetail(generics.RetrieveUpdateDestroyAPIView):
     """

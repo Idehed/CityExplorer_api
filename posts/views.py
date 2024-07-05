@@ -8,7 +8,7 @@ from .serializers import PostSerializer
 
 class PostList(generics.ListCreateAPIView):
     """
-    List all post or create a post if the user is logged in 
+    List all post or create a post if the user is logged in
     The perform_create method associates the post with the logged in user
     """
     serializer_class = PostSerializer
@@ -17,7 +17,7 @@ class PostList(generics.ListCreateAPIView):
     ]
     queryset = Post.objects.annotate(
         comments_count=Count('comment', distinct=True),
-        likes_count=Count('likes',distinct=True)
+        likes_count=Count('likes', distinct=True)
     ).order_by('-created_at')
     filter_backends = [
         filters.OrderingFilter,
@@ -31,7 +31,7 @@ class PostList(generics.ListCreateAPIView):
 
     ]
     search_fields = [
-        'owner__username', 
+        'owner__username',
         'title',
     ]
     ordering_fields = [
@@ -43,6 +43,7 @@ class PostList(generics.ListCreateAPIView):
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
 
+
 class PostDetail(generics.RetrieveUpdateDestroyAPIView):
     """
     Retrieve a post and edit or delete it if you own it
@@ -51,5 +52,5 @@ class PostDetail(generics.RetrieveUpdateDestroyAPIView):
     permission_classes = [IsOwnerOrReadOnly]
     queryset = Post.objects.annotate(
         comments_count=Count('comment', distinct=True),
-        likes_count=Count('likes',distinct=True)
+        likes_count=Count('likes', distinct=True)
     ).order_by('-created_at')

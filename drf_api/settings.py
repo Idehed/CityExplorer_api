@@ -11,7 +11,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 import re
 from pathlib import Path
-import os 
+import os
 import dj_database_url
 
 if os.path.exists('env.py'):
@@ -31,8 +31,8 @@ REST_FRAMEWORK = {
         if 'DEV' in os.environ
         else 'dj_rest_auth.jwt_auth.JWTCookieAuthentication'
     )],
-     'DEFAULT_PAGINATION_CLASS':
-        'rest_framework.pagination.PageNumberPagination',
+    'DEFAULT_PAGINATION_CLASS':
+    'rest_framework.pagination.PageNumberPagination',
     'PAGE_SIZE': 10,
     'DATETIME_FORMAT': '%d %b %Y',
 }
@@ -60,12 +60,14 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'DEV' in os.environ
 
-ALLOWED_HOSTS = ['8000-idehed-cityexplorerapi-nx93wqj5n4w.ws.codeinstitute-ide.net', os.environ.get('ALLOWED_HOST')]
+ALLOWED_HOSTS = [
+    '8000-idehed-cityexplorerapi-nx93wqj5n4w.ws.codeinstitute-ide.net',
+    os.environ.get('ALLOWED_HOST')]
 
 
 CSRF_TRUSTED_ORIGINS = [
-"https://*.codeinstitute-ide.net",
-"https://*.herokuapp.com",
+    "https://*.codeinstitute-ide.net",
+    "https://*.herokuapp.com",
 ]
 
 # Application definition
@@ -119,14 +121,18 @@ if 'CLIENT_ORIGIN' in os.environ:
     ]
 
 if 'CLIENT_ORIGIN_DEV' in os.environ:
-    extracted_url = re.match(r'^.+-', os.environ.get('CLIENT_ORIGIN_DEV', ''), re.IGNORECASE).group(0)
+    extracted_url = re.match(
+        r'^.+-',
+        os.environ.get('CLIENT_ORIGIN_DEV', ''),
+        re.IGNORECASE
+    ).group(0)
     CORS_ALLOWED_ORIGIN_REGEXES = [
         rf"{extracted_url}(eu|us)\d+\w\.codeinstitute-ide\.net$",
     ]
 
 CORS_ALLOW_CREDENTIALS = True
 
-CORS_ORIGIN_ALLOW_ALL= True
+CORS_ORIGIN_ALLOW_ALL = True
 
 ROOT_URLCONF = 'drf_api.urls'
 
@@ -153,7 +159,7 @@ WSGI_APPLICATION = 'drf_api.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 if 'DEV' in os.environ:
-     DATABASES = {
+    DATABASES = {
          'default': {
              'ENGINE': 'django.db.backends.sqlite3',
              'NAME': BASE_DIR / 'db.sqlite3',
@@ -169,18 +175,14 @@ else:
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
-    {
-        'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.CommonPasswordValidator',
-    },
-    {
-        'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
-    },
+    {'NAME':
+    'django.contrib.auth.password_validation.UserAttributeSimilarityValidator'},
+    {'NAME':
+    'django.contrib.auth.password_validation.MinimumLengthValidator'},
+    {'NAME':
+    'django.contrib.auth.password_validation.CommonPasswordValidator'},
+    {'NAME':
+    'django.contrib.auth.password_validation.NumericPasswordValidator'},
 ]
 
 

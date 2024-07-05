@@ -2,6 +2,7 @@ from django.contrib.humanize.templatetags.humanize import naturaltime
 from rest_framework import serializers
 from .models import Review
 
+
 class ReviewSerializer(serializers.ModelSerializer):
     """
     Serializer for the Review model
@@ -27,8 +28,9 @@ class ReviewSerializer(serializers.ModelSerializer):
     class Meta:
         model = Review
         fields = ['id', 'owner', 'guide', 'is_owner', 'profile_id',
-        'profile_image', 'created_at', 'updated_at', 
-        'content', 'rating',]
+                  'profile_image', 'created_at', 'updated_at',
+                  'content', 'rating']
+
 
 class ReviewDetailSerializer(ReviewSerializer):
     """

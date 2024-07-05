@@ -1,10 +1,11 @@
 from rest_framework import serializers
 from .models import Guide
 
+
 class GuideSerializer(serializers.ModelSerializer):
     """
     Serializer for the Guide model
-    Shows the profile image and how many review related to 
+    Shows the profile image and how many review related to
     that guide post
     """
     owner = serializers.ReadOnlyField(source='owner.username')
