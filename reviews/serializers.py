@@ -4,6 +4,8 @@ from .models import Review
 
 class ReviewSerializer(serializers.ModelSerializer):
     """
+    Serializer for the Review model
+    Adds extra fields when returning a list of Comment instances
     """
     owner = serializers.ReadOnlyField(source="owner.username")
     is_owner = serializers.SerializerMethodField()
@@ -30,5 +32,7 @@ class ReviewSerializer(serializers.ModelSerializer):
 
 class ReviewDetailSerializer(ReviewSerializer):
     """
+    Serializer for the Review model used in Detail view
+    Guide is a read only field so that we dont have to set it on each update
     """
     guide = serializers.ReadOnlyField(source="guide.id")

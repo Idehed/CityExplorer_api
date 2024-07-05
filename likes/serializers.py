@@ -3,6 +3,10 @@ from rest_framework import serializers
 from .models import Like
 
 class LikeSerializer(serializers.ModelSerializer):
+    """
+    Serializer for the Like model 
+    The create method handles the unique constraint on 'owner' and 'post'
+    """
     owner = serializers.ReadOnlyField(source='owner.username')
 
 
@@ -11,7 +15,7 @@ class LikeSerializer(serializers.ModelSerializer):
         fields = [
             'id', 'created_at', 'owner', 'post',
         ]
-
+    # can not like the post more than one time
     def create(self, validated_data):
         try:
             return super().create(validated_data)

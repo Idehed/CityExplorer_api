@@ -5,6 +5,7 @@ from .serializers import ContactSerializer
 
 class ContactList(generics.ListCreateAPIView):
     """
+    List all contacts or create one
     """
     queryset = Contact.objects.all()
     serializer_class = ContactSerializer
@@ -13,6 +14,7 @@ class ContactList(generics.ListCreateAPIView):
 
 class ContactDetail(generics.RetrieveUpdateDestroyAPIView):
     """
+    Retrieve a contact, or update or delete it by id
     """
     queryset = Contact.objects.all()
     serializer_class = ContactSerializer

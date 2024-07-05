@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 
 class Guide(models.Model):
     """
+    Guides model, related to user
     """
     owner = models.OneToOneField(User, on_delete=models.CASCADE)
     city = models.CharField(max_length=255)

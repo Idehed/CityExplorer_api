@@ -4,6 +4,7 @@ from guides.models import Guide
 
 class Review(models.Model):
     """
+    Reviews model, realted to user and owner 
     """
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     guide = models.ForeignKey(

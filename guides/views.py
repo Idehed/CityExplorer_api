@@ -6,6 +6,8 @@ from .serializers import GuideSerializer
 
 class GuideList(generics.ListCreateAPIView):
     """
+    List all the comments or create one if you are logged in 
+    calculate the number of reviews and an average rating number
     """
     serializer_class = GuideSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
@@ -28,6 +30,7 @@ class GuideList(generics.ListCreateAPIView):
 
 class GuideDetail(generics.RetrieveUpdateDestroyAPIView):
     """
+    Retrieve a comment, or update or delete it by id if you own it
     """
     permission_classes = [IsOwnerOrReadOnly]
     serializer_class = GuideSerializer
