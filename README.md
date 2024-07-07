@@ -271,7 +271,7 @@ Most commonly, forks are used to either propose changes to someone else's projec
 
 - Some others here [Flaticon](https://fontawesome.com/)
 
-- My font is from [Google Fonts](https://fonts.google.com/)
+- My font is from [Google Fonts Poppins](https://fonts.google.com/specimen/Poppins?query=po)
 
 - The signup and signin images are from [Unsplash](https://unsplash.com/)
 
