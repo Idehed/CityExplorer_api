@@ -1,24 +1,23 @@
 # CityXP API
 
-![CityXP]()<br>
+![CityXP](images/family.webp)<br>
+CityXP is a social media platform designed for people that like to discover new cities. Users can share their experiences, stories, and images about different cities, creating a community of city explorers. Whether you're posting about hidden gems, local cuisine, or cultural landmarks, CityXP is the perfect place to document and discover city life around the world.
 
+Additionally, CityXP offers a feature where users can become certified city guides. As a guide, you can showcase your knowledge and passion for your city, providing personalized tour that visitors can enjoy.
 
 ## Table of Contents
 * [CityXP API](#CityXP-api)
-  * [Objective](#Objective)
+  * [Development Goals](#Development-Goals)
     * [React Frontend](#React-Frontend)
   * [Live page](#Live-Page)
 * [Planning & Agile](#Planning-and-Agile)
-  * [Design](#Design)
   * [Wireframes](#Wireframes)
   * [Agile](#Agile)
   * [Labels used](#Labels-used)
-  * [User stories](#User-stories)
-  * [Relationship Diagram](#Relationship-Diagram)
+  * [Database design](#Database-Design)
   * [Methodology CRUD](#Methodology-CRUD)
   * [Features and Functionality for Superusers](#Features-and-Functionality-for-Superusers)
 * [Manual Testing](#Manual-testing)
-  * [Deployed Admin Screens](#deployed-admin-screens)
   * [Validation](#validation)
   * [Future Improvements](#Future-Improvements)
   * [Installed Python Packages](#Installed-Python-Packages)
@@ -32,101 +31,57 @@
   * [Media](#Media)
 * [Acknowledgements](#Acknowledgements)
 
-## Objective
-This is the API for the SourdoughCircle FrontEnd application.
-Here the backend information such as users, profiles, posts, comments, likes, categories etc are stored.
+## Development Goals
+The goal of this API is to store backend data for the CityEP FrontEnd application.
+Here the backend information such as users, profiles, posts, comments, likes, guide, reviews are stored. And all is CRUD functioned.
 
 ### React Frontend
-The repository for the frontend of the application can be found here:<br>[CityXP FrontEnd]()
+The repository for the frontend of the application can be found here:<br>[CityXP FrontEnd](https://github.com/Idehed/cityexplorer-frontend)
 
 ## Live Page
-[CityXP API]()
+[CityXP API](https://cityexplorer-api-1e4f09c72732.herokuapp.com/)
 
-In development:
-![API Preview]()
-Deployed version:
-![API Preview]()
 
 # Planning and Agile
 
-## Design:
-
 ## Wireframes:
-### Homescreen/Feed
-![Home]()
-### Liked posts page
-![Liked]()
-### Login page
-![Login]()
-### Profile page
-![Profile]()
-### Saved posts page (was later removed during planning)
-![Saved]()
-### Signup page
-![Sign up]()
+Wireframes can be seen here in the Frontend: <br>[CityXP FrontEnd](https://github.com/Idehed/cityexplorer-frontend) 
 
 ## Agile:
 The API and Frontend of this project was planned using Agile methodology and MoSCoW prioritization on github projects.<br>
 
-The user stories project can be found [here]() 
+The user stories project can be found [here](https://github.com/users/Idehed/projects/6) 
 
 ## Labels used:
-`must have`
-`should have`
-`could have`
-`wont have`
 
+    - Must Have 
+    - Should have  
+    - Could have
+    - Future implementation
+    - Won't have
+This projects user stories was divied into 9 milestones , "Authentication", "Navigation", "Posts", "Profile", "Comments", "Likes", "Contact", "Guides" and "Followers". All the user stories has been labeled and assinged to the developer and some labels has been put later such as "won't fix" and "Future implementation".
+![Project planning](https://github.com/Idehed/CityExplorer_api/assets/146822758/42430643-e6d2-4d85-8b12-5ad6c91945db)
 
-![Project planning]()
+<b>All the issues were closed and the milestones subsequently too.</b>
 
-## User Stories
-### `Must-Have`:<br>
+## Database Design
 
-
-### `Should-Have`:<br>
-
-
-### `Could-Have`:<br>
-
-
-### `Wont-Have` & `Future implementation`:<br>
-
-
-
-<b>The issues were closed and the milestones subsequently too.</b>
-
-## Relationship Diagram
-The relationship diagram between models from an individual perspective can be best defined as follows:
-
-- The [Profile]() flaunts the owner(OneToOne),<br>
- created_at(DateTimeField),<br>
- updated_at(DateTimeField),<br>
- name(CharField),<br>
- email(EmailField),<br>
- content(TextField),<br>
- image(ImageField),<br>
- facebook_link(URLField),<br>
- twitter_link(URLField) and<br>
- instagram_field(URLField)<br>
-
-
-***
 <br>
 
 
-<img src="" alt="Models Diagram">
+![Database design](https://github.com/Idehed/CityExplorer_api/assets/146822758/91e83df7-de8a-4ffd-9852-4f06dcece426)
 
 ## Methodology CRUD
 When performing CRUD (Create, Retrieve, Update, Delete) function based views, the following methods were used to manipulate the table in the database.
 
 For such, to the subsequent endpoints:
-/profiles/, /posts/, /comments/, /likes/, /followers/, /contact/, /category/
+/profiles/, /posts/, /comments/, /likes/, /followers/, /guides/, /reviews/
 
 - POST - Used to create an object to a list of (endpoint)
 - GET - Used to retrieve series of objects from a list of (endpoint)
 
 Singularly, for the same endpoints past the primary keys:
-/profiles/int:pk/, /posts/int:pk/int:pk/, /comments/int:pk/, /likes/int:pk/, /followers/int:pk/, /contact/int:pk/, category/
+/profiles/int:pk/, /posts/int:pk/int:pk/, /comments/int:pk/, /likes/int:pk/, /followers/int:pk/, /guides/int:pk/, /reviews/int:pk/
 
 - GET - Used to view a single object in a list or (endpoint)
 - PUT - Used to update a single object in a list of (endpoint)
@@ -138,136 +93,62 @@ Users can then:
 - CRUD Comments
 - CRUD Likes
 - CRUD Followers
-- CR Contacts
+- CRUD Guides
+- CRUD Reviews
 
+![Admin panel](https://github.com/Idehed/CityExplorer_api/assets/146822758/f57e6712-d1cb-41e8-bebd-25918f636bf0)
 
 ## Features and Functionality for Superusers
 
 As a Superuser one has the ability to perform the following via the admin panel:
 - CRUD Posts
-- CRUD Comments
+- CRUD Guides
 - CRUD Profiles
 - CRUD Contacts
 - Change Passwords
 - Change emails
 - Promote users to Superuser
 
-<img src="" alt="Admin Panel (local)"><br>
+
 
 
 # Manual Testing
 
-Manual Testing for the overall functionality of the API was performed by entering dummy data in the backend both via Backend-and Front-end.
-All data is CRUDed accordingly.<br>
+Manual Testing for the overall functionality of the API was performed by entering dummy data in the backend via Backend-end.
+All data is CRUD functioned.
+Create, Read, Update and Delete.
+Screenshots have been taken to display that everything is working as expected.<br>
 <b>[Detailed manual testing is located here](/Testing.md)</b>
 
 
-
-
-## Deployed admin Screens
-
-<details>
-<summary><b>Django admin panel</b></summary>
-<summary>
-<br>
-
-  An overview of the django admin panel to display the different pathways and to inform what the admin can do.
-
-  - <b>Profiles</b><br>
-    The admin overview of all the profiles where admin can pick a profile and delete it (GET, POST and DELETE)
-  ![Profiles]()
-  - <b>Profiles details</b><br>
-    Profile details, here the admin can change all the details in the profile as displayed in the image. The admin can also delete users. (GET, PUT, PATCH, DELETE)
-  ![Profiles details]()
-  - <b>Posts</b><br>
-    Postlist for admin to view and handle all the posts on the website (GET, POST and DELETE)
-  ![Posts]()
-  - <b>Posts details</b><br>
-    Post details admin view to make it easy for admin to handle the posts details. The admin can change all the details of the post and delete it if needed. (GET, PUT, PATCH and DELETE)
-  ![Posts details]()
-  - <b>Likes</b><br>
-    Likes view that displays a list of the likes and what post that is liked (GET, POST, DELETE)
-  ![Likes]()
-  - <b>Likes details</b><br>
-    Details view for likes where admin can edit what posts the like should be connected to, the admin can also change user that liked and delete likes. (GET, PUT, PATCH and DELETE)
-  ![Likes details]()
-  - <b>Contact</b><br>
-    Contact list view of all the incoming messages from the contact form on the website. Admin can create new contact and delete existing ones. (GET, POST, DELETE)
-  ![Contact]()
-  - <b>Contact details</b><br>
-    Admin contact details where admin can read the message and it's details, edit, add new information, and delete. An admin response field is also implemented but non working at the moment, this will be a [future improvement](#future-improvements) where admin is supposed to be able to respond directly on the admin panel and the email will be sent to the email the user added to the form. (GET, PUT, PATCH and DELETE)
-  ![Contact details]()
-  - <b>Comments</b><br>
-    Comments list admin overview for the admin to see all the comments, add new ones and delete existing ones. (GET, POST and DELETE)
-  ![Comments]()
-  - <b>Comments details</b><br>
-    Details view for comments where admin can update all the fields needed for the comment, the admin can also delete the comment. (GET, PUT, PATCH and DELETE)
-  ![Comments details]()
-  - <b>Category</b><br>
-    Category list view for admin to display all existing categories with id number and name. Admin can add new categories or delete existing ones. (GET, POST and DELETE)
-  ![Category]()
-  - <b>Category details</b><br>
-    Details view for categories. The admin can update existing fields and delete if needed. (GET, PUT, PATCH and DELETE)
-  ![Category details]()
-
-
-</summary>
-</details>
-<details>
-<summary><b>Deployed API overview</b></summary>
-<summary>
-<br>
-
-  Below are screenshots of the deployed API that displays the main overview and that the paths are working correctly and not displaying any sensitive information, the main testing was done in the local API to get more details and information when testing and can be found [here](#manual-testing) and the live API can be found [here]()
-
-  - [Start]()<br>
-    The main page of the deployed API
-  ![Start]()
-  - [/profiles]()<br>
-    The profile list on the deployed API
-  ![Profiles]()
-  - [/profiles/id]()<br>
-    The profile id view on the deployed API
-  ![Profiles id]()
-  - [/posts]()<br>
-    The posts list on the deployed API
-  ![Posts]()
-  - [/posts/id]()<br>
-    The posts id view on the deployed API
-  ![Posts id]()
-  - [/likes]()<br>
-    The likes list on the deployed API
-  ![Likes]()
-  - [/likes/id]()<br>
-    The likes id view on the deployed API
-  ![Likes id]()
-  - [/contact (authentication required to display)]()<br>
-    The contact list on the deployed API. This page should respond with non authenticated information to not give everyone access to users information and messages sent through with the contact form.
-  ![Contact]()
-  - [/contact/id (authentication required to display)]()<br>
-    The contact id view on the deployed API. This page should respond with non authenticated information to not give everyone access to users information and messages sent through with the contact form.
-  ![Contact id]()
-  - [/comments]()<br>
-    The comments list on the deployed API.
-  ![Comments]()
-  - [/comments/id]()<br>
-    The comments id view on the deployed API.
-  ![Comments id]()
-
-</summary>
-</details>
-
 ## Validation
-CI Python Linter was also used in parallel with the development of the API, to keep the code free of errors.
+CI Python Linter was also used with the development of the API, to keep the code free of errors.
 
-The Code has not exhibited apparent errors after consecutive tests and corrections throughout the development.
 Minor errors was appearing in the validation but was simple to resolve:
 
+    - E501 line to long (85 > 79 characters)
+    - E225 missing whitespace around operator   
+    - E128 continuation line under-indented for visual indent
+    - E122 continuation line missing indentation or outdented
+    - E111 indentation is not a mutiplie of 4
+    - E117 over-indented
+    - E302 expencted 2 blac lines,found 1
+    - W292 no newline at end of file
 
- ![Python validation]()
+I had one that i could not fix and it was this one, i tried with everything but all outcome was line to long.
+ ![Python validation](https://github.com/Idehed/CityExplorer_api/assets/146822758/ca439639-8afe-4538-96b4-a3ace0892a0a)
 
 ## Future Improvements
-
+<b>Contact page</b><br>
+I did not have enought time to implement the contact page so that is one thing to improve the website.
+<b>Notification</b><br>
+Notification for the user if someone has likes, commented or followed you would be nice to have.
+<b>Django-resized</b>
+Would add the django-rezsized for both profile model and post model for impreved performace.
+<b>Edit guide</b>
+Would be nice to have the function to be able to edit your guide information.
+<b>Delete reviews</b>
+The option to delete your review if you for some reason have changed your mind or a guide.
 
 
 ## Installed Python Packages
@@ -276,7 +157,29 @@ To install, the following command ran: ```pip install``` ...
 
 
 ## Package Dependencies
--
+
+    - asgiref==3.8.1
+    - cloudinary==1.40.0  
+    - dj-database-url==0.5.0
+    - dj-rest-auth==2.1.9
+    - Django==4.2
+    - django-allauth==0.44.0
+    - django-cloudinary-storage==0.3.0
+    - django-cors-headers==4.4.0
+    - django-filter==24.2
+    - djangorestframework==3.15.2
+    - djangorestframework-simplejwt==5.3.1
+    - gunicorn==22.0.0
+    - oauthlib==3.2.2
+    - pillow==10.3.0
+    - psycopg2==2.9.9
+    - PyJWT==2.8.0
+    - python3-openid==3.2.0
+    - pytz==2024.1
+    - requests-oauthlib==2.0.0
+    - setuptools==68.0.0
+    - sqlparse==0.5.0
+
 
 # Development and Deployment
 The project was developed using GitHub and GitPod platforms...
@@ -323,7 +226,7 @@ The website is being hosted and deployed on Heroku:
 - Hit "Connect" and "Enable Automatic Deploys" to keep the the repository in parallel to Heroku.
 - Manually "Deploy Main Branch".
 - Upon successful deployment, retrieve the link for the mock terminal.
-- The live app can be found [here]().
+- The live app can be found [here](https://cityexplorer-api-1e4f09c72732.herokuapp.com/).
 
 ## Forking
 Most commonly, forks are used to either propose changes to someone else's project or to use someone else's project as a starting point for your own idea.
@@ -341,16 +244,34 @@ Most commonly, forks are used to either propose changes to someone else's projec
 - Django REST Framework (Python Framework - API)
 
 ## Other forms of development
-- [Diagrams](https://app.diagrams.net/) - Diagram set up
 - [Github](https://github.com/) - Host for the repository
-- [Gitpod](https://gitpod.io/) - Code editor
-- [ElephantSQL](https://www.elephantsql.com/) - Database
+- [Gitpod-Enterprise](https://codeinstitute-ide.net/) - Code editor
+- [PostgreSQL](https://dbs.ci-dbs.net/) - Database
 - [Cloudinary](https://cloudinary.com/) - Static & Media host
 - [Heroku](https://id.heroku.com/) - Cloud platform/Host the live project
 
 # Credits
 
+- The lessons and tutorials provided by Code Institute, on the final module entitled "Django REST Framework" for the 'Advanced Front-End' endtitled "moments".
+
+- I have been getting insperation from following users:<br>
+[Gareth McGirr](https://github.com/Gareth-McGirr),<br>
+[Hujanen91](https://github.com/Hujanen91),<br>
+
+- I got help with creating the star rating using this website [React-simple-star-rating](https://react-simple-star-rating.vercel.app/?path=/story/introduction--page)
+
 ## Media:
+
+- Many of my icons has been collected from this website 
+[Flaticon](https://www.flaticon.com/)
+
+- Some others here [Flaticon](https://fontawesome.com/)
+
+- My font is from [Google Fonts](https://fonts.google.com/)
+
+- The signup and signin images are from [Unsplash](https://unsplash.com/)
 
 
 # Acknowledgements
+- My mentor [Gareth McGirr](https://github.com/Gareth-McGirr) for his continuing support and great advice throughout this project.
+- The slack community that helped me with many error problems throughout this project!

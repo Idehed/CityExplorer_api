@@ -3,12 +3,10 @@
 
 [Back to Readme](README.md#manual-testing)
 
-Manual Testing for the overall functionality of the API was performed by entering dummy data in the backend both via Backend-and Front-end.
-All data is CRUDed accordingly.
-
-Screenshots have been taken borth in local production and in deployed version to display that everything is working as expected.
-The screenshots during testing is taken in local production to more specifically show the auth and unauth results for the api and to properly display that everything is working. 
-Images from the deployed api and the admin django panel can be found []()
+Manual Testing for the overall functionality of the API was performed by entering dummy data in the backend via Backend-end.
+All data is CRUD functioned.
+Create, Read, Update and Delete.
+Screenshots have been taken to display that everything is working as expected.
 
 | Testcase                                                                     | Expected Result                                                                                             | Test Result | Screenshots                                                                    |
 | ---------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------- | ----------- | ------------------------------------------------------------------------       |
