@@ -141,12 +141,16 @@ I had one that i could not fix and it was this one, i tried with everything but 
 ## Future Improvements
 <b>Contact page</b><br>
 I did not have enought time to implement the contact page so that is one thing to improve the website.
+
 <b>Notification</b><br>
 Notification for the user if someone has likes, commented or followed you would be nice to have.
+
 <b>Django-resized</b>
 Would add the django-rezsized for both profile model and post model for impreved performace.
+
 <b>Edit guide</b>
 Would be nice to have the function to be able to edit your guide information.
+
 <b>Delete reviews</b>
 The option to delete your review if you for some reason have changed your mind or a guide.
 
