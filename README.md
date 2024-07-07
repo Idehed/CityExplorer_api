@@ -1,6 +1,6 @@
-# CityXP API
+# CityXP API ![CityXP](images/family.webp)
 
-![CityXP](images/family.webp)<br>
+<br>
 CityXP is a social media platform designed for people that like to discover new cities. Users can share their experiences, stories, and images about different cities, creating a community of city explorers. Whether you're posting about hidden gems, local cuisine, or cultural landmarks, CityXP is the perfect place to document and discover city life around the world.
 
 Additionally, CityXP offers a feature where users can become certified city guides. As a guide, you can showcase your knowledge and passion for your city, providing personalized tour that visitors can enjoy.
