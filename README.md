@@ -139,19 +139,19 @@ I had one that i could not fix and it was this one, i tried with everything but 
  ![Python validation](https://github.com/Idehed/CityExplorer_api/assets/146822758/ca439639-8afe-4538-96b4-a3ace0892a0a)
 
 ## Future Improvements
-<b>Contact page</b><br>
+<b>Contact page:</b><br>
 I did not have enought time to implement the contact page so that is one thing to improve the website.
 
-<b>Notification</b><br>
+<b>Notification:</b><br>
 Notification for the user if someone has likes, commented or followed you would be nice to have.
 
-<b>Django-resized</b>
+<b>Django-resized:</b><br>
 Would add the django-rezsized for both profile model and post model for impreved performace.
 
-<b>Edit guide</b>
+<b>Edit guide:</b><br>
 Would be nice to have the function to be able to edit your guide information.
 
-<b>Delete reviews</b>
+<b>Delete reviews:</b><br>
 The option to delete your review if you for some reason have changed your mind or a guide.
 
 
