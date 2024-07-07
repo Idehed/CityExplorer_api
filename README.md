@@ -59,8 +59,8 @@ The user stories project can be found [here](https://github.com/users/Idehed/pro
     - Could have
     - Future implementation
     - Won't have
-This projects user stories was divied into 9 milestones , "Authentication", "Navigation", "Posts", "Profile", "Comments", "Likes", "Contact", "Guides" and "Followers". All the user stories has been labeled and assinged to the developer and some labels has been put later such as "won't fix" and "Future implementation".
-![Project planning](https://github.com/Idehed/CityExplorer_api/assets/146822758/42430643-e6d2-4d85-8b12-5ad6c91945db)
+This project user stories were divided into 9 milestones , "Authentication", "Navigation", "Posts", "Profile", "Comments", "Likes", "Contact", "Guides" and "Followers". All the user stories have been labeled and assigned to the developer and some labels have been put later such as "won't fix" and "Future implementation"
+![Project planning](https://github.com/Idehed/cityexplorer-frontend/assets/146822758/5a7e4371-aad6-4128-ba28-2e9256662420)
 
 <b>All the issues were closed and the milestones subsequently too.</b>
 
