@@ -151,9 +151,6 @@ Would add the django-rezsized for both profile model and post model for impreved
 <b>Edit guide:</b><br>
 Would be nice to have the function to be able to edit your guide information.
 
-<b>Delete reviews:</b><br>
-The option to delete your review if you for some reason have changed your mind or a guide.
-
 
 ## Installed Python Packages
 The following packages were installed when developing this project:
@@ -274,8 +271,11 @@ Most commonly, forks are used to either propose changes to someone else's projec
 - My font is from [Google Fonts Poppins](https://fonts.google.com/specimen/Poppins?query=po)
 
 - The signup and signin images are from [Unsplash](https://unsplash.com/)
+  - Thanks to [Ana Bórquez](https://unsplash.com/@anabg1) for the signin image.
+  - Thanks to [Benobro](https://unsplash.com/@benobro) for the signup image.
+
 
 
 # Acknowledgements
 - My mentor [Gareth McGirr](https://github.com/Gareth-McGirr) for his continuing support and great advice throughout this project.
-- The slack community that helped me with many error problems throughout this project!
+- The Slack community that helped me with many errors throughout this project!
