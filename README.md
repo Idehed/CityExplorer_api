@@ -266,7 +266,7 @@ Most commonly, forks are used to either propose changes to someone else's projec
 - Many of my icons has been collected from this website 
 [Flaticon](https://www.flaticon.com/)
 
-- Some others here [Flaticon](https://fontawesome.com/)
+- Some others here [Fontawesome](https://fontawesome.com/)
 
 - My font is from [Google Fonts Poppins](https://fonts.google.com/specimen/Poppins?query=po)
 
