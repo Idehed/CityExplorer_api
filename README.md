@@ -257,7 +257,7 @@ Most commonly, forks are used to either propose changes to someone else's projec
 
 - I have been getting insperation from following users:<br>
 [Gareth McGirr](https://github.com/Gareth-McGirr),<br>
-[Hujanen91](https://github.com/Hujanen91),<br>
+[Haniibani](https://github.com/Haniibani),<br>
 
 - I got help with creating the star rating using this website [React-simple-star-rating](https://react-simple-star-rating.vercel.app/?path=/story/introduction--page)
 
